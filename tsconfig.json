@@ -1,0 +1,37 @@
+{
+    "compilerOptions": {
+        "incremental": true,
+        "target": "es2018",
+        "lib": [
+            "es2017",
+            "dom"
+        ],
+        "module": "esnext",
+        "rootDir": "./",
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "allowJs": true,
+        "outDir": "./tsc-out/",
+        "noEmitOnError": true,
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": false,
+        "forceConsistentCasingInFileNames": true,
+        "strict": true,
+        "noImplicitAny": true,
+        "strictNullChecks": true,
+        "strictFunctionTypes": true,
+        "noImplicitThis": true,
+        "useUnknownInCatchVariables": true,
+        "alwaysStrict": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "noImplicitReturns": true,
+        "noUncheckedIndexedAccess": true,
+        "noImplicitOverride": true,
+        "noPropertyAccessFromIndexSignature": true,
+        "skipLibCheck": true
+    },
+    "include": [
+        "./src/js/**/*.ts"
+    ]
+}

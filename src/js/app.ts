@@ -1,27 +1,28 @@
 'use strict';
 
-import {inputs} from "./inputs";
-import {displayImage} from "./image";
-import {playAudio} from "./audio";
+import { fromChar } from "./inputs";
+import { displayImage } from "./image";
+import { playAudio } from "./audio";
+import loader from "./loader";
 
-const input = document.getElementById('input') as HTMLInputElement;
+window.addEventListener('DOMContentLoaded', async () => {
+    await loader();
 
-document.getElementById('body')?.addEventListener('pointerdown', () => {
-    input.focus();
-});
+    const input = document.getElementById("input");
+    input?.focus();
 
-input.addEventListener('focusout', () => {
-    input.focus();
-});
+    input?.addEventListener('blur', () => {
+        input?.focus();
+    });
 
-input.addEventListener('input', () => {
-    const letter = input.value;
-    input.value = '';
+    input?.addEventListener('input', (event: Event): void => {
+        const inputEvent = event as InputEvent;
+        const output = fromChar(inputEvent.data?.toLowerCase() as string);
+        input.textContent = '';
 
-    const output = inputs[letter];
-
-    if (output) {
-        displayImage(output);
-        playAudio(output.name);
-    }
+        if (output) {
+            displayImage(output);
+            playAudio(output.name);
+        }
+    });
 });

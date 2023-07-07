@@ -1,0 +1,22 @@
+#preload {
+    display: none;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    opacity: 95%;
+    position: relative;
+
+    #button {
+        background-color: mediumseagreen;
+        border-radius: 10px;
+        cursor: pointer;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        color: antiquewhite;
+        font-weight: bold;
+        font-size: 2rem;
+        padding: 1rem 2rem;
+    }
+}

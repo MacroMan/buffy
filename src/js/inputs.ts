@@ -3,8 +3,8 @@ export interface IInputType {
     duration: number;
 }
 
-export interface IInput {
-    [key: string]: IInputType;
+export function fromChar(char: string) {
+    return inputs[char];
 }
 
 export const inputs: { [key: string]: IInputType; } = {
@@ -117,3 +117,5 @@ export const inputs: { [key: string]: IInputType; } = {
         duration: 784
     },
 }
+
+export const inputsAsArray: IInputType[] = Object.values(inputs);
